@@ -8,8 +8,8 @@ import type {
 } from "../types";
 
 const api = axios.create({
-  baseURL: "http://127.0.0.1:8000",
-  timeout: 10000,
+  baseURL: "https://mexzwj7a6yiy5mgqevd223uqrm0vvyuo.lambda-url.us-east-1.on.aws",
+  timeout: 15000,
 });
 
 export const getNationalSummary = async (): Promise<NationalSummary> => {
