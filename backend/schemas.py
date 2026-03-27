@@ -1,6 +1,7 @@
 from pydantic import BaseModel
 from typing import Optional, List
 
+
 class ContaminantResult(BaseModel):
     contaminant: str
     average_result: float
