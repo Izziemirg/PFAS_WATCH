@@ -1,3 +1,4 @@
+from mangum import Mangum
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from typing import List
@@ -100,3 +101,5 @@ def get_zip_coords(zipcode: str):
         raise HTTPException(status_code=404, detail="ZIP not found")
     row = match.iloc[0]
     return {"lat": float(row["lat"]), "lng": float(row["lng"])}
+
+handler = Mangum(app)
