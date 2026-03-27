@@ -1,0 +1,7 @@
+fastapi
+pydantic
+mangum
+pandas
+s3fs
+boto3
+pyarrow
