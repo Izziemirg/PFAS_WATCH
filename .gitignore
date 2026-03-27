@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
+
+# Data files — too large for GitHub
+backend/data/ucmr5_clean.parquet
+backend/data/ECHO_EXPORTER.csv
+backend/data/echo_coords.csv
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# Mac
+.DS_Store
+
+# Secrets
+*.key
+*.pem
