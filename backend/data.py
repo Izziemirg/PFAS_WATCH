@@ -2,22 +2,9 @@ import pandas as pd
 import numpy as np
 from math import radians, cos, sin, asin, sqrt
 from functools import lru_cache
-import boto3
 import os
 
-DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
-
 BUCKET_NAME = "pfas-watch-data-storage"
-
-def load_data():
-    """Load UCMR5 data directly from S3."""
-    path = f"s3://{BUCKET_NAME}/ucmr5_clean.parquet"
-    return pd.read_parquet(path)
-
-def load_zip_centroids():
-    """Load ZIP data directly from S3."""
-    path = f"s3://{BUCKET_NAME}/uszips.csv"
-    return pd.read_csv(path, dtype={"zip": str})
 
 def haversine(lat1, lon1, lat2, lon2):
     R = 3956
@@ -49,22 +36,29 @@ def system_level_risk(tiers: pd.Series) -> str:
 
 @lru_cache(maxsize=1)
 def load_data():
-    """Load UCMR5 data directly from S3. Cached to avoid repeated S3 hits."""
-    path = f"s3://{BUCKET_NAME}/ucmr5_clean.parquet"
-    df = pd.read_parquet(path)
-    # Apply your risk tiers immediately after loading
-    df["risk_tier"] = df.apply(assign_risk_tier, axis=1)
+    """Load UCMR5 data directly from S3 using s3fs."""
+    import s3fs
+    fs = s3fs.S3FileSystem(anon=False)
     
+    # Use the filesystem object to open the file
+    with fs.open(f"{BUCKET_NAME}/ucmr5_clean.parquet") as f:
+        df = pd.read_parquet(f)
+
+    # Re-apply your logic
+    df["risk_tier"] = df.apply(assign_risk_tier, axis=1)
     tribal_codes = ["01","02","03","04","05","06","07","08","09","10","NN"]
     df["is_tribal"] = df["State"].isin(tribal_codes)
     return df
 
 @lru_cache(maxsize=1)
 def load_zip_centroids():
-    """Load ZIP data directly from S3."""
-    path = f"s3://{BUCKET_NAME}/uszips.csv"
-    zip_df = pd.read_csv(path, dtype={"zip": str})
-    # Process the zip data exactly as you had it before
+    """Load ZIP data directly from S3 using s3fs."""
+    import s3fs
+    fs = s3fs.S3FileSystem(anon=False)
+    
+    with fs.open(f"{BUCKET_NAME}/uszips.csv") as f:
+        zip_df = pd.read_csv(f, dtype={"zip": str})
+        
     zip_df = zip_df[zip_df["zcta"] == True][["zip", "lat", "lng", "city", "state_id"]]
     zip_df["zip"] = zip_df["zip"].str.zfill(5)
     return zip_df
