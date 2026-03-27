@@ -1,7 +1,8 @@
 fastapi
-pydantic
 mangum
-pandas
+pydantic
+pydantic-settings
 s3fs
-boto3
+fsspec
+pandas
 pyarrow
