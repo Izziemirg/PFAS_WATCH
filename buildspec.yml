@@ -5,14 +5,16 @@ phases:
     runtime-versions:
       nodejs: 20
     commands:
-      - echo "Installing dependencies..."
+      - echo "Navigating to frontend..."
       - cd $CODEBUILD_SRC_DIR/frontend
       - npm install
   build:
     commands:
-      - echo "Building React app..."
+      - echo "Starting Vite build..."
       - cd $CODEBUILD_SRC_DIR/frontend
       - npm run build
+      - echo "Verifying build output..."
+      - ls -R dist
 artifacts:
   base-directory: frontend/dist
   files:
