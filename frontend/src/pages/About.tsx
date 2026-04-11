@@ -49,7 +49,7 @@ export default function About() {
           {/* 1. Description Section */}
           <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
             <p>
-              I built{" "}
+              My name is Izzie Mirghani, I built{" "}
               <span style={{
                 color: "var(--accent)",
                 textShadow: "0 0 20px rgba(0,200,220,0.3)",
@@ -60,11 +60,12 @@ export default function About() {
               federal regulatory data, environmental contaminant data, human health data, data analysis, 
               and modern web development. In my work experience, I have worked with many federal 
               agencies including the EPA, I wanted to demonstrate what's possible when these paths
-              converge into one and analyis is made comprehensive and accessible to the general public, not just to analysts.
+              converge into one and the analyis is made comprehensive and accessible to the general public, not just to analysts.
             </p>
 
             <p>
-              The UCMR 5 dataset represents one of the most significant environmental monitoring efforts in 
+              The Fifth Unregulated Contaminant Monitoring Rule (UCMR 5) program mandates the EPA collect data on unregulated substances to 
+              inform future health-based regulations. The UCMR 5 dataset represents one of the most significant environmental monitoring efforts in 
               recent history. The 2024 MCL rule is a landmark regulation. But neither of these sources are easy to interact with
               in their raw form. This project is an attempt to change that.
             </p>
@@ -206,7 +207,7 @@ export default function About() {
           {/* 4. GitHub link */}
           <div style={{ textAlign: "center", paddingBottom: "2rem" }}>
             <a
-              href="https://github.com/yourusername/pfas-dashboard"
+              href="https://github.com/Izziemirg/PFAS_WATCH"
               target="_blank"
               rel="noopener noreferrer"
               style={{
