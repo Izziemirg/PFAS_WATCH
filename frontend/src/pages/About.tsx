@@ -60,15 +60,23 @@ export default function About() {
               federal regulatory compliance, human health, environmental contaminant data, data analysis, 
               and modern web development. In my work experience, I have worked with many federal 
               agencies including the EPA, I wanted to demonstrate what's possible when these paths
-              converge into one and the analyis is made comprehensive and accessible to the general public, not just to analysts.
+              converge into one and the analysis is made comprehensive and accessible to the general public, not just to analysts.
             </p>
 
             <p>
               The Fifth Unregulated Contaminant Monitoring Rule (UCMR 5) program mandates the EPA collect data on unregulated substances to 
               inform future health-based regulations. The UCMR 5 dataset represents one of the most significant environmental monitoring efforts in 
               recent history. The 2024 MCL rule is a landmark regulation. But neither of these sources are easy to interact with
-              in their raw form. This project is an attempt to change that.
+              in their raw form.
             </p>
+
+            </p>
+              This personal project is an attempt to change that.
+            </p>
+            </p>
+              *This project is for analytical demonstration purposes and is not an official regulatory advisory.
+            </p>
+            
           </div>
 
           {/* 2. Technical Stack Section */}
