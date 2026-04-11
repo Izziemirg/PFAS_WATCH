@@ -57,7 +57,7 @@ export default function About() {
                 PFAS Watch
               </span>
               {" "}as a portfolio project at the intersection of
-              federal regulatory data, environmental contaminant data, human health data, data analysis, 
+              federal regulatory compliance, human health, environmental contaminant data, data analysis, 
               and modern web development. In my work experience, I have worked with many federal 
               agencies including the EPA, I wanted to demonstrate what's possible when these paths
               converge into one and the analyis is made comprehensive and accessible to the general public, not just to analysts.
