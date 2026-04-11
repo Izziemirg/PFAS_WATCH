@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
-import Plot from "react-plotly.js";
-import { getMapSystems } from "../api/client";
+import Plotly from 'plotly.js-dist-min';
+import createPlotlyComponent from 'react-plotly.js/factory';
 import type { PWSummary, RiskTier } from "../types";
 import { RISK_TIER_COLORS } from "../types";
 
