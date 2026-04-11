@@ -70,13 +70,13 @@ export default function About() {
               in their raw form.
             </p>
 
-            </p>
+            <p>
               This personal project is an attempt to change that.
            </p>
-            </p>
+          
+            <p style={{ fontSize: "14px", fontStyle: "italic" }}>
               *This project is for analytical demonstration purposes and is not an official regulatory advisory.
             </p>
-            
           </div>
 
           {/* 2. Technical Stack Section */}
