@@ -2,7 +2,7 @@ name: Deploy Frontend
 on:
   push:
     branches:
-      - main  # or your branch name
+      - main
 
 jobs:
   deploy:
@@ -18,13 +18,13 @@ jobs:
         with:
           args: --delete
         env:
-          AWS_S3_BUCKET: pfas-watch-frontend-bucket-name # Change to your bucket name
+          AWS_S3_BUCKET: pfas-watch-frontend
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: 'us-east-1'
           SOURCE_DIR: 'dist'
       - name: Invalidate CloudFront
-        run: aws cloudfront create-invalidation --distribution-id YOUR_ID --paths "/*" # Change YOUR_ID
+        run: aws cloudfront create-invalidation --distribution-id E17OSQCZGSSFBR --paths "/*"
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
