@@ -208,7 +208,10 @@ export default function About() {
               margin: 0,
             }}></ul>
             <p>
-              All data is public and maintained by the U.S. EPA. I pull the PWS facility information via REST API from the Enforcement and Compliance History Online 'ECHO' Data Explorer. I also pull the PFAS contaminant levels from The Fifth Unregulated Contaminant Monitoring Rule. Additionally, I matched PWS locations to zip codes using a free dataset from simplemaps.com. Thank you to all maintainers and parties that make this data open-sourced. 
+              All data is public and maintained by the U.S. EPA. I pull the PWS facility information via REST API from the Enforcement and Compliance History Online 'ECHO' Data Explorer. I also pull the PFAS contaminant levels from The Fifth Unregulated Contaminant Monitoring Rule. Additionally, I matched PWS locations to zip codes using a free dataset from simplemaps.com. 
+              <p>
+              <p>
+              Thank you to all maintainers and parties that make this data open-sourced! 
             </p>
           </div>
 
