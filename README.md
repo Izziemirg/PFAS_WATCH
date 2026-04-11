@@ -2,8 +2,7 @@
 
 An interactive full-stack dashboard tracking PFAS contamination in U.S. public water systems against EPA's 2024 Maximum Contaminant Level rule.
 
-Live Demo
-[Coming soon — AWS deployment]
+Live Demo: https://d2zamm6fj3s5v8.cloudfront.net/about
 
 
 ## Stack
